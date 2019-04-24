@@ -48,7 +48,4 @@ print(df2.message_subject)
 # plt.show()
 
 
-
-#testing git
-
 # print(corr)
