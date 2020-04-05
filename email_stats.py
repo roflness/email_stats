@@ -13,7 +13,7 @@ else:
     print("Error: %s needs to include name of csv file" % (sys.argv[0],))
     sys.exit()
 
-df = pd.read_csv(filename+'.csv', thousands=',')
+df = pd.read_csv(filename, thousands=',')
 
 df.columns = ['filter_set', 'message_name', 'message_subject', 'matched', 'refunded', 'refunded_pct', 'emails_sent', 'emails_opened', 'emails_opened_pct', 'emails_clicked', 'emails_clicked_pct', 'emails_marked_spam_pct', 'emails_bounced_pct', 'emails_unsubscribed_pct', 'revenue', 'revenue_from_emails', 'emails_cost', 'profit_from_emails']
 
@@ -42,10 +42,10 @@ print(df2.message_subject)
 # # df2 = df.iloc[0:, 1:]
 
 
-# corr = df['emails_opened_pct'].corr(df['message_count'])
+corr = df['emails_opened_pct'].corr(df['message_count'])
 
-# plt.scatter(df['emails_opened_pct'], df['message_count'])
-# plt.show()
+plt.scatter(df['emails_opened_pct'], df['message_count'])
+plt.show()
 
 
-# print(corr)
+print(corr)
